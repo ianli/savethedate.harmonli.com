@@ -1,6 +1,6 @@
 (function($, _, undefined) {
   $(document).ready(function() {
-    start();
+    initialize();
 
     _.delay(function() {
       reveal();
@@ -17,7 +17,10 @@
     }, 100));
   });
 
-  function start() {
+  /**
+   * Sets the initial states of elements.
+   */
+  function initialize() {
     // Make sure that we're scrolled to the top.
     $(document.body).scrollTop(0);
 
