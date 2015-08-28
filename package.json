@@ -1,0 +1,11 @@
+{
+  "name": "harmonli-app",
+  "version": "1.0.0",
+  "description": "Beth and Ian's Wedding Site",
+  "author": "Ian Li (http://ianli.com)",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "bootstrap-sass": "^3.3.5"
+  }
+}
