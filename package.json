@@ -4,7 +4,10 @@
   "description": "Beth and Ian's Wedding Site",
   "author": "Ian Li (http://ianli.com)",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "lodash.delay": "^3.1.0",
+    "lodash.throttle": "^3.0.4"
+  },
   "devDependencies": {
     "bootstrap-sass": "^3.3.5",
     "browserify": "^11.0.1",
