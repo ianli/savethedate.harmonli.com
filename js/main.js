@@ -25,13 +25,19 @@
     $(document.body).scrollTop(0);
 
     $('.app-postcard').css({
-      marginTop: $(window).height() + 10
+      marginTop: $(window).height() + 10,
+      scaleX: 0.8,
+      scaleY: 1.25
     });
   }
 
   function reveal() {
     $('.app-bg-obfuscator')
-        .addClass('is-visible');
+        .velocity({
+          opacity: 0.5
+        }, {
+          duration: 500
+        });
 
     var $postcard = $('.app-postcard');
 
@@ -44,10 +50,13 @@
     }
 
     $postcard
-        .css({
-          marginTop: offset
-        })
-        .addClass('is-visible');
+        .velocity({
+          // Custom spring physics.
+          marginTop: [offset, [120, 13]],
+          opacity: 1
+        }, {
+          duration: 500
+        });
   }
 
   function updateObfuscator(ratioFromBottom) {
