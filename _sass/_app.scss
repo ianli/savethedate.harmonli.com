@@ -26,15 +26,40 @@ body {
   opacity: 0;
 }
 
-$postcardWidth: 400px;
+.app-section {
+  position: relative;
+  width: 100%;
+  height: 800px;
+}
+
+$cardWidth: 400px;
+
+.app-card {
+  position: absolute;
+  left: 50%;
+  margin-left: -$cardWidth / 2;
+  width: $cardWidth;
+  background-color: #fff;
+  background-size: cover;
+  border-radius: 2px;
+  // .mdl-shadow--16dp
+  box-shadow:
+      0 16px 24px 2px rgba(0,0,0,.14),
+      0 6px 30px 5px rgba(0,0,0,.12),
+      0 8px 10px -5px rgba(0,0,0,.2);
+}
+
+//////////////////////////////
+// POSTCARD
+//
 
 .app-postcard {
   position: absolute;
   left: 50%;
   z-index: 200;
-  margin-left: -$postcardWidth / 2;
-  width: $postcardWidth;
-  height: ($postcardWidth * 6 / 4);
+  margin-left: -$cardWidth / 2;
+  width: $cardWidth;
+  height: ($cardWidth * 6 / 4);
   background-color: #fff;
   background-image: url(/img/postcard.png);
   background-size: cover;
