@@ -112,7 +112,7 @@ $cardWidth: 400px;
 
 $mailboxCardHeight:  $cardWidth * 2 / 3;
 
-.app-card--mailbox {
+#app-card--mailbox {
   height: $mailboxCardHeight;
   top: 50%;
   margin-top: -$mailboxCardHeight / 2;
