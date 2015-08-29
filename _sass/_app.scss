@@ -70,3 +70,16 @@ $cardWidth: 400px;
       0 8px 10px -5px rgba(0,0,0,.2);
   opacity: .7;
 }
+
+//////////////////////////////
+// Mailbox Card
+//
+
+$mailboxCardHeight:  $cardWidth * 2 / 3;
+
+.app-card--mailbox {
+  height: $mailboxCardHeight;
+  top: 50%;
+  margin-top: -$mailboxCardHeight / 2;
+  background-image: url(/img/mailbox.png);
+}
