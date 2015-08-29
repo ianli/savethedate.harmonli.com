@@ -5,6 +5,8 @@ var _ = {};
 _.delay = require('lodash.delay');
 _.throttle = require('lodash.throttle');
 
+var OBFUSCATOR_OPACITY = 0.7;
+
 $(document).ready(function() {
   initialize();
 
@@ -31,16 +33,14 @@ function initialize() {
   $(document.body).scrollTop(0);
 
   $('.app-postcard').css({
-    marginTop: $(window).height() + 10,
-    scaleX: 0.8,
-    scaleY: 1.25
+    top: $(window).height() + 10
   });
 }
 
 function reveal() {
   $('.app-bg-obfuscator')
       .velocity({
-        opacity: 0.7
+        opacity: OBFUSCATOR_OPACITY
       }, {
         duration: 500
       });
@@ -58,7 +58,7 @@ function reveal() {
   $postcard
       .velocity({
         // Custom spring physics.
-        marginTop: [offset, [120, 13]],
+        top: [offset, [120, 13]],
         opacity: 1
       }, {
         duration: 500
@@ -67,6 +67,6 @@ function reveal() {
 
 function updateObfuscator(ratioFromBottom) {
   $('.app-bg-obfuscator').css({
-    opacity: (0.5) * ratioFromBottom
+    opacity: OBFUSCATOR_OPACITY * ratioFromBottom
   });
 }
