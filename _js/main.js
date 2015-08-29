@@ -36,10 +36,12 @@ function initialize() {
   // Make sure that we're scrolled to the top.
   $(document.body).scrollTop(0);
 
+  // Save the Date card is outside of the viewport.
   $('#app-card--savethedate').css({
     top: $(window).height() + 10
   });
 
+  // Arrow icon is outside of the viewport.
   var $appIconDown = $('#app-icon--down');
   $appIconDown.css({
     bottom: -($appIconDown.height() + 10)
@@ -78,7 +80,7 @@ function revealSaveTheDateCard() {
 function revealDownIcon() {
   $('#app-icon--down')
       .velocity({
-        bottom: [32, [200, 15]],
+        bottom: [24, [200, 15]],
       },
       500, // duration
       function() {
@@ -88,12 +90,12 @@ function revealDownIcon() {
 
 function subtlyMoveDownIcon() {
   $('#app-icon--down')
-    .velocity({
-      marginBottom: ['-10px', 'ease-in']
-    }, {
-      duration: 1000,
-      loop: true
-    });
+      .velocity({
+        bottom: [-8, 'ease-out']
+      }, {
+        duration: 1000,
+        loop: true
+      });
 }
 
 function updateObfuscator(ratioFromBottom) {
