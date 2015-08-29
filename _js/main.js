@@ -32,7 +32,7 @@ function initialize() {
   // Make sure that we're scrolled to the top.
   $(document.body).scrollTop(0);
 
-  $('.app-postcard').css({
+  $('.app-savethedate').css({
     top: $(window).height() + 10
   });
 }
@@ -45,7 +45,7 @@ function reveal() {
         duration: 500
       });
 
-  var $postcard = $('.app-postcard');
+  var $postcard = $('.app-savethedate');
 
   // Compute the offset so that the card is in the middle of screen.
   var offset = ($(window).height() - $postcard.height()) / 2;
