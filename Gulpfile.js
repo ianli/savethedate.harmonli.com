@@ -22,11 +22,21 @@ var jsPaths = {
 
 // Run Jekyll Build Asynchronously
 gulp.task('jekyll', function () {
-    var jekyll = spawn('jekyll', ['serve']);
+  var jekyll = spawn(
+        'jekyll',
+        [
+          'serve',
+          '--config',
+          '_config.yml,_config-dev.yml'
+        ],
+        {
+          stdio: 'inherit'
+        }
+      );
 
-    jekyll.on('exit', function (code) {
-        console.log('-- Finished Jekyll Build --');
-    });
+  jekyll.on('exit', function (code) {
+    console.log('-- Finished Jekyll Build --');
+  });
 });
 
 gulp.task('development_js', function() {
