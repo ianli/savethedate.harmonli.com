@@ -69,8 +69,8 @@ $iconWidth: 64px;
 //
 
 #app-icon--down {
+  display: none;
   position: fixed;
-  bottom: 20px;
   background-image: url('/img/icon-down.png');
 }
 

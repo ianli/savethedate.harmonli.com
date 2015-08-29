@@ -43,7 +43,8 @@ function initialize() {
   var $appIconDown = $('#app-icon--down');
   $appIconDown.css({
     bottom: -($appIconDown.height() + 10)
-  });
+  })
+  .show();
 }
 
 function revealSaveTheDateCard() {
@@ -77,11 +78,10 @@ function revealSaveTheDateCard() {
 function revealDownIcon() {
   $('#app-icon--down')
       .velocity({
-        bottom: [20, [120, 13]],
+        bottom: [32, [120, 13]],
       }, {
         duration: 500
       });
-  });
 }
 
 function updateObfuscator(ratioFromBottom) {
