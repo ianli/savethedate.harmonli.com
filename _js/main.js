@@ -40,7 +40,7 @@ function initialize() {
 function reveal() {
   $('.app-bg-obfuscator')
       .velocity({
-        opacity: 0.5
+        opacity: 0.7
       }, {
         duration: 500
       });
