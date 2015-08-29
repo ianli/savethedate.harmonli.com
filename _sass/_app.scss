@@ -40,27 +40,6 @@ body {
 }
 
 //////////////////////////////
-// Card
-//
-
-$cardWidth: 400px;
-
-.app-card {
-  position: absolute;
-  left: 50%;
-  margin-left: -$cardWidth / 2;
-  width: $cardWidth;
-  background-color: #fff;
-  background-size: cover;
-  border-radius: 2px;
-  // .mdl-shadow--16dp
-  box-shadow:
-      0 16px 24px 2px rgba(0,0,0,.14),
-      0 6px 30px 5px rgba(0,0,0,.12),
-      0 8px 10px -5px rgba(0,0,0,.2);
-}
-
-//////////////////////////////
 // Icon
 //
 
@@ -96,18 +75,17 @@ $iconWidth: 64px;
 }
 
 //////////////////////////////
-// Save-the-Date Card
+// Card
 //
 
-#app-card--savethedate {
+$cardWidth: 400px;
+
+.app-card {
   position: absolute;
   left: 50%;
-  z-index: 200;
   margin-left: -$cardWidth / 2;
   width: $cardWidth;
-  height: ($cardWidth * 6 / 4);
   background-color: #fff;
-  background-image: url(/img/postcard.png);
   background-size: cover;
   border-radius: 2px;
   // .mdl-shadow--16dp
@@ -115,6 +93,16 @@ $iconWidth: 64px;
       0 16px 24px 2px rgba(0,0,0,.14),
       0 6px 30px 5px rgba(0,0,0,.12),
       0 8px 10px -5px rgba(0,0,0,.2);
+}
+
+//////////////////////////////
+// Save-the-Date Card
+//
+
+#app-card--savethedate {
+  z-index: 200;
+  height: ($cardWidth * 6 / 4);
+  background-image: url(/img/postcard.png);
   opacity: .7;
 }
 
