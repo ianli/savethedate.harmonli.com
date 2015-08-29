@@ -15,7 +15,7 @@ $(document).ready(function() {
   }, 500);
 
   _.delay(function() {
-    revealDownIcon();
+    revealArrowIcon();
   }, 900);
 
   $(window).scroll(_.throttle(function() {
@@ -42,7 +42,7 @@ function initialize() {
   });
 
   // Arrow icon is outside of the viewport.
-  var $appIconDown = $('#app-icon--down');
+  var $appIconDown = $('#app-icon--arrow');
   $appIconDown.css({
     bottom: -($appIconDown.height() + 10)
   })
@@ -77,19 +77,19 @@ function revealSaveTheDateCard() {
       });
 }
 
-function revealDownIcon() {
-  $('#app-icon--down')
+function revealArrowIcon() {
+  $('#app-icon--arrow')
       .velocity({
         bottom: [24, [200, 15]],
       },
       500, // duration
       function() {
-        subtlyMoveDownIcon();
+        subtlyAnimateArrowIcon();
       });
 }
 
-function subtlyMoveDownIcon() {
-  $('#app-icon--down')
+function subtlyAnimateArrowIcon() {
+  $('#app-icon--arrow')
       .velocity({
         bottom: [-8, 'ease-out']
       }, {
