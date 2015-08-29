@@ -1,3 +1,5 @@
+env: production
+
 # Build settings
 markdown: kramdown
 
