@@ -26,13 +26,17 @@ body {
   opacity: 0;
 }
 
+$postcardWidth: 400px;
+
 .app-postcard {
   position: relative;
   margin: 0 auto;
   z-index: 200;
-  width: 480px;
-  height: 600px;
+  width: $postcardWidth;
+  height: ($postcardWidth * 6 / 4);
   background-color: #fff;
+  background-image: url(/img/postcard.png);
+  background-size: cover;
   border-radius: 2px;
   // .mdl-shadow--16dp
   box-shadow:
