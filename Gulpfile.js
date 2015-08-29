@@ -10,6 +10,7 @@ var gulp = require('gulp');
 var gutil = require('gulp-util');
 var source = require('vinyl-source-stream');
 var sourcemaps = require('gulp-sourcemaps');
+var spawn = require('child_process').spawn;
 var watchify = require('watchify');
 
 var jsPaths = {
@@ -18,6 +19,15 @@ var jsPaths = {
   DEST_BUILD: 'js',
   ENTRY_POINT: './_js/main.js'
 };
+
+// Run Jekyll Build Asynchronously
+gulp.task('jekyll', function () {
+    var jekyll = spawn('jekyll', ['serve']);
+
+    jekyll.on('exit', function (code) {
+        console.log('-- Finished Jekyll Build --');
+    });
+});
 
 gulp.task('development_js', function() {
   // Use watchify to speed up Browserify builds.
@@ -58,4 +68,4 @@ function invokeBundle(watcher) {
     .pipe(gulp.dest(jsPaths.DEST_BUILD));
 }
 
-gulp.task('development', ['development_js']);
+gulp.task('development', ['development_js', 'jekyll']);
