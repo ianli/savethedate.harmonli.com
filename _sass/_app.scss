@@ -29,9 +29,10 @@ body {
 $postcardWidth: 400px;
 
 .app-postcard {
-  position: relative;
-  margin: 0 auto;
+  position: absolute;
+  left: 50%;
   z-index: 200;
+  margin-left: -$postcardWidth / 2;
   width: $postcardWidth;
   height: ($postcardWidth * 6 / 4);
   background-color: #fff;
