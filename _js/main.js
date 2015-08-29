@@ -78,10 +78,22 @@ function revealSaveTheDateCard() {
 function revealDownIcon() {
   $('#app-icon--down')
       .velocity({
-        bottom: [32, [120, 13]],
-      }, {
-        duration: 500
+        bottom: [32, [200, 15]],
+      },
+      500, // duration
+      function() {
+        subtlyMoveDownIcon();
       });
+}
+
+function subtlyMoveDownIcon() {
+  $('#app-icon--down')
+    .velocity({
+      marginBottom: ['-10px', 'ease-in']
+    }, {
+      duration: 1000,
+      loop: true
+    });
 }
 
 function updateObfuscator(ratioFromBottom) {
