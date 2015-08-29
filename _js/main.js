@@ -11,7 +11,7 @@ $(document).ready(function() {
   initialize();
 
   _.delay(function() {
-    reveal();
+    revealSaveTheDateCard();
   }, 500);
 
   $(window).scroll(_.throttle(function() {
@@ -37,7 +37,7 @@ function initialize() {
   });
 }
 
-function reveal() {
+function revealSaveTheDateCard() {
   $('.app-bg-obfuscator')
       .velocity({
         opacity: OBFUSCATOR_OPACITY
