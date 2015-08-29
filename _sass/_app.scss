@@ -65,13 +65,24 @@ $iconWidth: 64px;
 }
 
 //////////////////////////////
-// Arrow Down Icon
+// Arrow Icon
 //
 
 #app-icon--arrow {
   display: none;
   position: fixed;
+  z-index: 401;
   background-image: url('/img/icon-down.png');
+}
+
+//////////////////////////////
+// Hand Icon
+//
+
+#app-icon--hand {
+  position: absolute;
+  bottom: -500px;
+  background-image: url('/img/icon-hand.png');
 }
 
 //////////////////////////////
