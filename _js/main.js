@@ -14,6 +14,10 @@ $(document).ready(function() {
     revealSaveTheDateCard();
   }, 500);
 
+  _.delay(function() {
+    revealDownIcon();
+  }, 900);
+
   $(window).scroll(_.throttle(function() {
     var windowHeight = $(window).height();
     var scrollHeight = $(document.body).prop('scrollHeight');
@@ -34,6 +38,11 @@ function initialize() {
 
   $('#app-card--savethedate').css({
     top: $(window).height() + 10
+  });
+
+  var $appIconDown = $('#app-icon--down');
+  $appIconDown.css({
+    bottom: -($appIconDown.height() + 10)
   });
 }
 
@@ -63,6 +72,16 @@ function revealSaveTheDateCard() {
       }, {
         duration: 500
       });
+}
+
+function revealDownIcon() {
+  $('#app-icon--down')
+      .velocity({
+        bottom: [20, [120, 13]],
+      }, {
+        duration: 500
+      });
+  });
 }
 
 function updateObfuscator(ratioFromBottom) {
