@@ -18,10 +18,12 @@ $(document).ready(function() {
   }, 500);
 
   _.delay(function() {
-    revealArrowIcon();
-  }, 900);
+    slideUpArrowIcon();
+    subtlyAnimateArrowIcon();
+  }, 1000);
 
-  var scene = new ScrollScene({
+  // Mailbox scene
+  new ScrollScene({
         triggerElement: '#app-card--mailbox',
         triggerOffset: 135,
         downCallback: function() {
@@ -34,6 +36,21 @@ $(document).ready(function() {
                 duration: 500
               }
             );
+        }
+      })
+      .addTo(ScrollDispatcher);
+
+  new ScrollScene({
+        triggerElement: '#app-icon--end',
+        triggerHook: 'onEnter',
+        downCallback: function() {
+          hideArrowIcon();
+          revealEndIcon();
+        },
+        upCallback: function() {
+          hideEndIcon();
+          slideUpArrowIcon();
+          subtlyAnimateArrowIcon();
         }
       })
       .addTo(ScrollDispatcher);
@@ -97,25 +114,61 @@ function revealSaveTheDateCard() {
       });
 }
 
-function revealArrowIcon() {
+function slideUpArrowIcon() {
   $('#app-icon--arrow')
-      .velocity({
-        bottom: [24, [200, 15]],
-      },
-      500, // duration
-      function() {
-        subtlyAnimateArrowIcon();
-      });
+      .velocity(
+        { bottom: [24, [200, 15]] },
+        // duration
+        500
+      );
 }
 
 function subtlyAnimateArrowIcon() {
   $('#app-icon--arrow')
+      .velocity(
+        {
+          bottom: [-8, 'ease-out']
+        },
+        {
+          duration: 1000,
+          loop: true
+        }
+      );
+}
+
+function hideArrowIcon() {
+  $('#app-icon--arrow')
+      .velocity('stop')
+      .velocity(
+        {
+          bottom: [24, [200, 15]]
+        },
+        100
+      )
+      .velocity(
+        {
+          bottom: [-100, [200, 15]]
+        },
+        500
+      );
+}
+
+function revealEndIcon() {
+  $('#app-icon--end')
       .velocity({
-        bottom: [-8, 'ease-out']
+        opacity: 1
       }, {
-        duration: 1000,
-        loop: true
+        duration: 500
       });
+}
+
+function hideEndIcon() {
+  $('#app-icon-end')
+      .velocity({
+        opacity: 0
+      },
+      // duration
+      500);
 }
 
 function updateObfuscator(ratioFromBottom) {
