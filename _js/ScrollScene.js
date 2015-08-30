@@ -48,6 +48,7 @@ ScrollScene.prototype.trigger = function(scrollInfo) {
       triggerPoint = $(this.triggerElement).offset().top -
           scrollInfo.windowHeight +
           this.triggerOffset;
+      break;
     case 'onLeave':
       triggerPoint = $(this.triggerElement).offset().top -
           this.triggerOffset;
