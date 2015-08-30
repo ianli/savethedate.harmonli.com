@@ -86,6 +86,17 @@ $iconWidth: 64px;
 }
 
 //////////////////////////////
+// End Icon
+//
+
+#app-icon--end {
+  position: absolute;
+  bottom: 24px;
+  opacity: 0;
+  background-image: url('/img/icon-end.png');
+}
+
+//////////////////////////////
 // Card
 //
 
