@@ -1,5 +1,8 @@
 'use strict';
 
+var ScrollDispatcher = require('./ScrollDispatcher');
+var ScrollScene = require('./ScrollScene');
+
 // Import Lodash.js functions individually.
 var _ = {};
 _.delay = require('lodash.delay');
@@ -17,6 +20,23 @@ $(document).ready(function() {
   _.delay(function() {
     revealArrowIcon();
   }, 900);
+
+  var scene = new ScrollScene({
+        triggerElement: '#app-card--mailbox',
+        triggerOffset: 135,
+        downCallback: function() {
+          $('#app-icon--hand')
+            .velocity(
+              {
+                bottom: [-40, [150, 15]]
+              },
+              {
+                duration: 500
+              }
+            );
+        }
+      })
+      .addTo(ScrollDispatcher);
 
   $(window).scroll(_.throttle(function() {
     var windowHeight = $(window).height();
