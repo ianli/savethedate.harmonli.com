@@ -36,10 +36,22 @@ $(document).ready(function() {
                 duration: 500
               }
             );
+        },
+        upCallback: function() {
+          $('#app-icon--hand')
+            .velocity(
+              {
+                bottom: [-500, [150, 15]]
+              },
+              {
+                duration: 500
+              }
+            );
         }
       })
       .addTo(ScrollDispatcher);
 
+  // End icon scene
   new ScrollScene({
         triggerElement: '#app-icon--end',
         triggerHook: 'onEnter',
