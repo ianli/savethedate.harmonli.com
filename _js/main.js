@@ -1,5 +1,6 @@
 'use strict';
 
+var HandIcon = require('./HandIcon');
 var ScrollDispatcher = require('./ScrollDispatcher');
 var ScrollScene = require('./ScrollScene');
 
@@ -25,8 +26,8 @@ $(document).ready(function() {
   new ScrollScene({
         triggerElement: '#app-card--mailbox',
         triggerOffset: 135,
-        downCallback: showHandIcon,
-        upCallback: hideHandIcon
+        downCallback: HandIcon.show,
+        upCallback: HandIcon.hide
       })
       .addTo(ScrollDispatcher);
 
@@ -92,6 +93,8 @@ function initialize() {
     bottom: -($appIconDown.height() + 10)
   })
   .show();
+
+  HandIcon.init();
 }
 
 function revealSaveTheDateCard() {
@@ -171,32 +174,6 @@ function hideArrowIcon() {
         {
           duration: 500,
           easing: [200, 15]
-        }
-      );
-}
-
-function showHandIcon() {
-  $('#app-icon--hand')
-      .velocity(
-        {
-          bottom: -40
-        },
-        {
-          duration: 500,
-          easing: [150, 15]
-        }
-      );
-}
-
-function hideHandIcon() {
-  $('#app-icon--hand')
-      .velocity(
-        {
-          bottom: -500
-        },
-        {
-          duration: 500,
-          easing: [150, 15]
         }
       );
 }
