@@ -45,7 +45,7 @@ body {
 //
 
 $iconWidth: 64px;
-$iconShadowHeight: 16px;
+$iconShadowHeight: 32px;
 
 .app-icon {
   display: block;
@@ -187,12 +187,6 @@ $stringLength: 50vh;
   background-repeat: repeat-y;
   background-size: 2px;
   transition: top 200ms;
-
-  &.reveal {
-    top: 0;
-    margin-top: -$iconWidth / 2;
-    transition: top 500ms;
-  }
 }
 
 #app-string--sf {
