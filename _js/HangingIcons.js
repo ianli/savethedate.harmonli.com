@@ -2,7 +2,7 @@
 
 // Import Lodash.js functions individually.
 var _ = {};
-_.delay = require('lodash.delay');
+_.assign = require('lodash.assign');
 
 var HangingIcons = {
   init: init,
@@ -13,8 +13,9 @@ var HangingIcons = {
 function init() {
   $('.app-string')
     .css({
-
-    });
+      top: -$(window).height() / 2
+    })
+    .show();
 }
 
 function show() {
@@ -30,15 +31,11 @@ function show() {
   $('#app-string--sf')
       .velocity(props, options);
 
-  _.delay(function() {
-    $('#app-string--heart')
-        .velocity(props, options);
-  }, 100);
+  $('#app-string--heart')
+      .velocity(props, _.assign(options, { delay: 100 }));
 
-  _.delay(function() {
-    $('#app-string--happy')
-        .velocity(props, options);
-  }, 200);
+  $('#app-string--happy')
+      .velocity(props, _.assign(options, { delay: 200 }));
 }
 
 function hide() {
@@ -47,21 +44,18 @@ function hide() {
   };
 
   var options = {
-    duration: 200
+    duration: 200,
+    easing: [120, 15]
   };
 
   $('#app-string--happy')
       .velocity(props, options);
 
-  _.delay(function() {
-    $('#app-string--heart')
-        .velocity(props, options);
-  }, 100);
+  $('#app-string--heart')
+      .velocity(props, _.assign(options, { delay: 100 }));
 
-  _.delay(function() {
-    $('#app-string--sf')
-        .velocity(props, options);
-  }, 200);
+  $('#app-string--sf')
+      .velocity(props, _.assign(options, { delay: 200 }));
 }
 
 module.exports = HangingIcons;

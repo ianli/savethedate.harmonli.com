@@ -75,10 +75,11 @@ function initialize() {
   // Make sure that we're scrolled to the top.
   $(document.body).scrollTop(0);
 
-  SaveTheDateCard.init();
   ArrowIcon.init();
   EndIcon.init();
   HandIcon.init();
+  HangingIcons.init();
+  SaveTheDateCard.init();
 }
 
 function updateObfuscator(ratioFromBottom) {
