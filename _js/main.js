@@ -26,30 +26,8 @@ $(document).ready(function() {
   new ScrollScene({
         triggerElement: '#app-card--mailbox',
         triggerOffset: 135,
-        downCallback: function() {
-          $('#app-icon--hand')
-            .velocity(
-              {
-                bottom: -40
-              },
-              {
-                duration: 500,
-                easing: [150, 15]
-              }
-            );
-        },
-        upCallback: function() {
-          $('#app-icon--hand')
-            .velocity(
-              {
-                bottom: -500
-              },
-              {
-                duration: 500,
-                easing: [150, 15]
-              }
-            );
-        }
+        downCallback: showHandIcon,
+        upCallback: hideHandIcon
       })
       .addTo(ScrollDispatcher);
 
@@ -182,6 +160,32 @@ function hideArrowIcon() {
           bottom: [-100, [200, 15]]
         },
         500
+      );
+}
+
+function showHandIcon() {
+  $('#app-icon--hand')
+      .velocity(
+        {
+          bottom: -40
+        },
+        {
+          duration: 500,
+          easing: [150, 15]
+        }
+      );
+}
+
+function hideHandIcon() {
+  $('#app-icon--hand')
+      .velocity(
+        {
+          bottom: -500
+        },
+        {
+          duration: 500,
+          easing: [150, 15]
+        }
       );
 }
 
