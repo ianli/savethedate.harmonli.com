@@ -174,7 +174,7 @@ $mailboxCardHeight:  $cardWidth * 2 / 3;
 // String
 //
 
-$stringLength: 100vh;
+$stringLength: 50vh;
 
 .app-string {
   position: fixed;
@@ -189,7 +189,7 @@ $stringLength: 100vh;
   transition: top 200ms;
 
   &.reveal {
-    top: -50vh;
+    top: 0;
     margin-top: -$iconWidth / 2;
     transition: top 500ms;
   }
