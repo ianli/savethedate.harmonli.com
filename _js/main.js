@@ -1,6 +1,7 @@
 'use strict';
 
 var ArrowIcon = require('./ArrowIcon');
+var EndIcon = require('./EndIcon');
 var HandIcon = require('./HandIcon');
 var ScrollDispatcher = require('./ScrollDispatcher');
 var ScrollScene = require('./ScrollScene');
@@ -35,8 +36,9 @@ $(document).ready(function() {
         triggerElement: '#app-icon--end',
         triggerHook: 'onEnter',
         downCallback: function() {
+          EndIcon.show();
           ArrowIcon.hide();
-          revealEndIcon();
+
           $('#app-string--sf').addClass('reveal');
 
           _.delay(function() {
@@ -48,7 +50,7 @@ $(document).ready(function() {
           }, 200);
         },
         upCallback: function() {
-          hideEndIcon();
+          EndIcon.hide();
           ArrowIcon.show();
           $('#app-string--happy').removeClass('reveal');
 
@@ -87,7 +89,7 @@ function initialize() {
   });
 
   ArrowIcon.init();
-
+  EndIcon.init();
   HandIcon.init();
 }
 
@@ -117,24 +119,6 @@ function revealSaveTheDateCard() {
       }, {
         duration: 500
       });
-}
-
-function revealEndIcon() {
-  $('#app-icon--end')
-      .velocity({
-        opacity: 1
-      }, {
-        duration: 500
-      });
-}
-
-function hideEndIcon() {
-  $('#app-icon-end')
-      .velocity({
-        opacity: 0
-      },
-      // duration
-      500);
 }
 
 function updateObfuscator(ratioFromBottom) {
