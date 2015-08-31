@@ -1,5 +1,6 @@
 'use strict';
 
+var ArrowIcon = require('./ArrowIcon');
 var HandIcon = require('./HandIcon');
 var ScrollDispatcher = require('./ScrollDispatcher');
 var ScrollScene = require('./ScrollScene');
@@ -18,9 +19,7 @@ $(document).ready(function() {
     revealSaveTheDateCard();
   }, 500);
 
-  _.delay(function() {
-    showArrowIcon();
-  }, 1000);
+  _.delay(ArrowIcon.show, 1000);
 
   // Mailbox scene
   new ScrollScene({
@@ -36,7 +35,7 @@ $(document).ready(function() {
         triggerElement: '#app-icon--end',
         triggerHook: 'onEnter',
         downCallback: function() {
-          hideArrowIcon();
+          ArrowIcon.hide();
           revealEndIcon();
           $('#app-string--sf').addClass('reveal');
 
@@ -50,7 +49,7 @@ $(document).ready(function() {
         },
         upCallback: function() {
           hideEndIcon();
-          showArrowIcon();
+          ArrowIcon.show();
           $('#app-string--happy').removeClass('reveal');
 
           _.delay(function() {
@@ -87,12 +86,7 @@ function initialize() {
     top: $(window).height() + 10
   });
 
-  // Arrow icon is outside of the viewport.
-  var $appIconDown = $('#app-icon--arrow');
-  $appIconDown.css({
-    bottom: -($appIconDown.height() + 10)
-  })
-  .show();
+  ArrowIcon.init();
 
   HandIcon.init();
 }
@@ -123,59 +117,6 @@ function revealSaveTheDateCard() {
       }, {
         duration: 500
       });
-}
-
-function showArrowIcon() {
-  $('#app-icon--arrow')
-      // Stop all previous animation.
-      .velocity('stop', true)
-      // Slide up.
-      .velocity(
-        {
-          bottom: 24
-        },
-        {
-          duration: 500,
-          easing: [200, 15]
-        }
-      )
-      // Loop it moving up and down.
-      .velocity(
-        {
-          bottom: -8
-        },
-        {
-          duration: 1000,
-          easing: 'ease-out'
-          loop: true
-        }
-      );
-}
-
-function hideArrowIcon() {
-  $('#app-icon--arrow')
-      // Stop all previous animation.
-      .velocity('stop', true)
-      // Return to its original position when showing.
-      .velocity(
-        {
-          bottom: 24
-        },
-        {
-          duration: 100,
-          easing: [200, 15]
-        }
-      )
-      // Slide down.
-      .velocity(
-        {
-          bottom: -100
-        },
-        {
-          duration: 500,
-          easing: [200, 15]
-        }
-      );
 }
 
 function revealEndIcon() {
