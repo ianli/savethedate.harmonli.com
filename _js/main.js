@@ -3,6 +3,7 @@
 var ArrowIcon = require('./ArrowIcon');
 var EndIcon = require('./EndIcon');
 var HandIcon = require('./HandIcon');
+var SaveTheDateCard = require('./SaveTheDateCard');
 var ScrollDispatcher = require('./ScrollDispatcher');
 var ScrollScene = require('./ScrollScene');
 
@@ -17,7 +18,14 @@ $(document).ready(function() {
   initialize();
 
   _.delay(function() {
-    revealSaveTheDateCard();
+    $('.app-bg-obfuscator')
+        .velocity({
+          opacity: OBFUSCATOR_OPACITY
+        }, {
+          duration: 500
+        });
+
+    SaveTheDateCard.show();
   }, 500);
 
   _.delay(ArrowIcon.show, 1000);
@@ -83,42 +91,10 @@ function initialize() {
   // Make sure that we're scrolled to the top.
   $(document.body).scrollTop(0);
 
-  // Save the Date card is outside of the viewport.
-  $('#app-card--savethedate').css({
-    top: $(window).height() + 10
-  });
-
+  SaveTheDateCard.init();
   ArrowIcon.init();
   EndIcon.init();
   HandIcon.init();
-}
-
-function revealSaveTheDateCard() {
-  $('.app-bg-obfuscator')
-      .velocity({
-        opacity: OBFUSCATOR_OPACITY
-      }, {
-        duration: 500
-      });
-
-  var $postcard = $('#app-card--savethedate');
-
-  // Compute the offset so that the card is in the middle of screen.
-  var offset = ($(window).height() - $postcard.height()) / 2;
-
-  // Offset is never smaller than the minimum offset.
-  if (offset < 100) {
-    offset = 100;
-  }
-
-  $postcard
-      .velocity({
-        // Custom spring physics.
-        top: [offset, [120, 13]],
-        opacity: 1
-      }, {
-        duration: 500
-      });
 }
 
 function updateObfuscator(ratioFromBottom) {
