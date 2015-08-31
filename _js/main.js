@@ -58,11 +58,29 @@ $(document).ready(function() {
         downCallback: function() {
           hideArrowIcon();
           revealEndIcon();
+          $('#app-string--sf').addClass('reveal');
+
+          _.delay(function() {
+            $('#app-string--heart').addClass('reveal');
+          }, 100);
+
+          _.delay(function() {
+            $('#app-string--happy').addClass('reveal');
+          }, 200);
         },
         upCallback: function() {
           hideEndIcon();
           slideUpArrowIcon();
           subtlyAnimateArrowIcon();
+          $('#app-string--happy').removeClass('reveal');
+
+          _.delay(function() {
+            $('#app-string--heart').removeClass('reveal');
+          }, 100);
+
+          _.delay(function() {
+            $('#app-string--sf').removeClass('reveal');
+          }, 200);
         }
       })
       .addTo(ScrollDispatcher);
