@@ -3,6 +3,7 @@
 var ArrowIcon = require('./ArrowIcon');
 var EndIcon = require('./EndIcon');
 var HandIcon = require('./HandIcon');
+var HangingIcons = require('./HangingIcons');
 var SaveTheDateCard = require('./SaveTheDateCard');
 var ScrollDispatcher = require('./ScrollDispatcher');
 var ScrollScene = require('./ScrollScene');
@@ -46,29 +47,12 @@ $(document).ready(function() {
         downCallback: function() {
           EndIcon.show();
           ArrowIcon.hide();
-
-          $('#app-string--sf').addClass('reveal');
-
-          _.delay(function() {
-            $('#app-string--heart').addClass('reveal');
-          }, 100);
-
-          _.delay(function() {
-            $('#app-string--happy').addClass('reveal');
-          }, 200);
+          HangingIcons.show();
         },
         upCallback: function() {
           EndIcon.hide();
           ArrowIcon.show();
-          $('#app-string--happy').removeClass('reveal');
-
-          _.delay(function() {
-            $('#app-string--heart').removeClass('reveal');
-          }, 100);
-
-          _.delay(function() {
-            $('#app-string--sf').removeClass('reveal');
-          }, 200);
+          HangingIcons.hide();
         }
       })
       .addTo(ScrollDispatcher);
