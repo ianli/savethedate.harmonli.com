@@ -15,6 +15,7 @@ function init() {
 
 function show() {
   $('#app-icon--hand')
+      .velocity('stop', true)
       .velocity(
         {
           bottom: -40
@@ -28,6 +29,7 @@ function show() {
 
 function hide() {
   $('#app-icon--hand')
+      .velocity('stop', true)
       .velocity(
         {
           bottom: -500
