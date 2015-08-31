@@ -30,10 +30,11 @@ $(document).ready(function() {
           $('#app-icon--hand')
             .velocity(
               {
-                bottom: [-40, [150, 15]]
+                bottom: -40
               },
               {
-                duration: 500
+                duration: 500,
+                easing: [150, 15]
               }
             );
         },
@@ -41,10 +42,11 @@ $(document).ready(function() {
           $('#app-icon--hand')
             .velocity(
               {
-                bottom: [-500, [150, 15]]
+                bottom: -500
               },
               {
-                duration: 500
+                duration: 500,
+                easing: [150, 15]
               }
             );
         }
