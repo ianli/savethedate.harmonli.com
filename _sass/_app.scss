@@ -177,8 +177,8 @@ $mailboxCardHeight:  $cardWidth * 2 / 3;
 $stringLength: 50vh;
 
 .app-string {
+  display: none;
   position: fixed;
-  top: -$stringLength;
   margin-top: -$iconWidth - $iconShadowHeight;
   padding-top: $stringLength;
   width: $iconWidth;
