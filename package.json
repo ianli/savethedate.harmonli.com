@@ -5,6 +5,7 @@
   "author": "Ian Li (http://ianli.com)",
   "private": true,
   "dependencies": {
+    "lodash.assign": "^3.2.0",
     "lodash.delay": "^3.1.0",
     "lodash.throttle": "^3.0.4"
   },
