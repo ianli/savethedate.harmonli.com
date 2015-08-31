@@ -19,7 +19,6 @@ $(document).ready(function() {
 
   _.delay(function() {
     slideUpArrowIcon();
-    subtlyAnimateArrowIcon();
   }, 1000);
 
   // Mailbox scene
@@ -51,7 +50,6 @@ $(document).ready(function() {
         upCallback: function() {
           hideEndIcon();
           slideUpArrowIcon();
-          subtlyAnimateArrowIcon();
           $('#app-string--happy').removeClass('reveal');
 
           _.delay(function() {
@@ -126,15 +124,12 @@ function revealSaveTheDateCard() {
 
 function slideUpArrowIcon() {
   $('#app-icon--arrow')
+      .velocity('stop', true)
       .velocity(
         { bottom: [24, [200, 15]] },
         // duration
         500
-      );
-}
-
-function subtlyAnimateArrowIcon() {
-  $('#app-icon--arrow')
+      )
       .velocity(
         {
           bottom: [-8, 'ease-out']
@@ -148,7 +143,7 @@ function subtlyAnimateArrowIcon() {
 
 function hideArrowIcon() {
   $('#app-icon--arrow')
-      .velocity('stop')
+      .velocity('stop', true)
       .velocity(
         {
           bottom: [24, [200, 15]]
