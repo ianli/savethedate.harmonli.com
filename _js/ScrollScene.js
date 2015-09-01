@@ -2,24 +2,24 @@
 
 /**
  * ScrollScene represents a scene that is triggered when the user scrolls.
+ *
+ * @param {object} options - Options for triggering the scene
+ * @param {string} options.triggerElement - Selector whose location will
+ *                 trigger the callback.
+ * @param {string} options.triggerHook - Trigger can happen when element:
+ *                 - is in the center of the viewport "onCenter" (default)
+ *                 - enters the viewport "onEnter"
+ *                 - leaves the viewport "onLeave"
+ * @param {function} options.downCallback - Called when we reach the
+ *                   triggerElement while scrolling DOWN.
+ * @param {function} options.upCallback - Called when we reach the
+ *                   triggerElement while scrolling UP.
  */
 var ScrollScene = function(options) {
-  // Selector whose location will trigger the callback.
   this.triggerElement = options.triggerElement;
-
-  // Trigger can happen when the element:
-  // - is in the center of the viewport (onCenter) [default]
-  // - enters the viewport (onEnter)
-  // - leaves the viewport (onLeave)
   this.triggerHook = options.triggerHook || 'onCenter';
-
-  // Offset (in pixels) from the trigger point.
   this.triggerOffset = options.triggerOffset || 0;
-
-  // Called when we reach the triggerElement while scrolling DOWN.
   this.downCallback = options.downCallback || function() {};
-
-  // Called when we reach the triggerElement while scrolling UP.
   this.upCallback = options.upCallback || function() {};
 
   // Allow triggering down.
