@@ -2,7 +2,6 @@
 
 // Import Lodash.js functions individually.
 var _ = {};
-_.delay = require('lodash.delay');
 _.throttle = require('lodash.throttle');
 
 /**
@@ -14,32 +13,65 @@ var ScrollDispatcher = function() {
 
   self.scenes = [];
 
-  var lastScrollTop = 0;
+  var lastScrollTop = -1;
 
-  $(document).ready(function() {
-    $(window).scroll(_.throttle(function() {
-      var currScrollTop = $(document.body).scrollTop();
+  // How to make faster scroll effects?
+  // https://gist.github.com/Warry/4254579
+  var scroll = window.requestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      window.msRequestAnimationFrame ||
+      window.oRequestAnimationFrame ||
+      null;
 
-      var scrollInfo = {
-        windowHeight: $(window).height(),
-        scrollHeight: $(document.body).prop('scrollHeight'),
-        scrollTop: currScrollTop
-      };
+  if (scroll) {
+    // requestAnimationFrame exists, so call it for the first time.
+    scroll(loop);
+  } else {
+    // requestAnimationFrame doesn't exist,
+    // so fallback to scroll events.
+    $(document).ready(function() {
+      $(window).scroll(_.throttle(dispatch, 100));
+    });
+  }
 
-      if (currScrollTop > lastScrollTop) {
-        scrollInfo.direction = 'down';
-      } else {
-        scrollInfo.direction = 'up';
-      }
+  //////////////////////////////
+  // FUNCTIONS
+  //
 
-      lastScrollTop = currScrollTop;
+  /**
+   * Loop using requestAnimationFrame.
+   * Calls dispatch when the window has been scrolled.
+   */
+  function loop() {
+    // ScrollTop has changed, so dispatch().
+    if (window.pageYOffset != lastScrollTop) {
+      dispatch();
+      lastScrollTop = window.pageYOffset;
+    }
 
-      for (var i = 0, n = self.scenes.length; i < n; i++) {
-        var scene = self.scenes[i];
-        scene.trigger(scrollInfo);
-      }
-    }));
-  });
+    // Recall the loop.
+    scroll(loop);
+  }
+
+  /**
+   * Calls trigger() on all the scenes associated with this dispatcher.
+   */
+  function dispatch() {
+    var currScrollTop = window.pageYOffset;
+
+    var scrollInfo = {
+          windowHeight: $(window).height(),
+          scrollHeight: $(document.body).prop('scrollHeight'),
+          scrollTop: currScrollTop,
+          direction: (currScrollTop > lastScrollTop) ? 'down' : 'up'
+        };
+
+    for (var i = 0, n = self.scenes.length; i < n; i++) {
+      var scene = self.scenes[i];
+      scene.trigger(scrollInfo);
+    }
+  }
 };
 
 /**
