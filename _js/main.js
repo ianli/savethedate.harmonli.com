@@ -7,6 +7,7 @@ var HangingIcons = require('./HangingIcons');
 var SaveTheDateCard = require('./SaveTheDateCard');
 var ScrollDispatcher = require('./ScrollDispatcher');
 var ScrollScene = require('./ScrollScene');
+var SimpleScrollScene = require('./SimpleScrollScene');
 
 // Import Lodash.js functions individually.
 var _ = {};
@@ -57,15 +58,21 @@ $(document).ready(function() {
       })
       .addTo(ScrollDispatcher);
 
-  $(window).scroll(_.throttle(function() {
-    var windowHeight = $(window).height();
-    var scrollHeight = $(document.body).prop('scrollHeight');
-    var scrollTop = $(document.body).scrollTop();
+  // Simple scene that changes the opacity of the obfuscator.
+  new SimpleScrollScene({
+        onScroll: function(scrollInfo) {
+          var windowHeight = scrollInfo.windowHeight;
+          var scrollHeight = scrollInfo.scrollHeight;
+          var scrollTop = scrollInfo.scrollTop;
 
-    var ratioFromBottom = 1 - (scrollTop / (scrollHeight - windowHeight));
+          var ratioFromBottom = 1 - (scrollTop / (scrollHeight - windowHeight));
 
-    updateObfuscator(ratioFromBottom);
-  }, 100));
+          $('.app-bg-obfuscator').css({
+            opacity: OBFUSCATOR_OPACITY * ratioFromBottom
+          });
+        }
+      })
+      .addTo(ScrollDispatcher);
 });
 
 /**
@@ -80,10 +87,4 @@ function initialize() {
   HandIcon.init();
   HangingIcons.init();
   SaveTheDateCard.init();
-}
-
-function updateObfuscator(ratioFromBottom) {
-  $('.app-bg-obfuscator').css({
-    opacity: OBFUSCATOR_OPACITY * ratioFromBottom
-  });
 }
