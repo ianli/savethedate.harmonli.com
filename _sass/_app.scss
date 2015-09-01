@@ -50,7 +50,6 @@ $iconShadowHeight: 32px;
 .app-icon {
   display: block;
   position: absolute;
-  z-index: 400;
   left: 50%;
   margin-left: -$iconWidth / 2;
   width: $iconWidth;
@@ -83,6 +82,7 @@ $iconShadowHeight: 32px;
 
 #app-icon--hand {
   position: absolute;
+  z-index: 201;
   bottom: -500px;
   background-image: url('/img/icon-hand.png');
 }
@@ -151,7 +151,7 @@ $cardWidth: 400px;
 //
 
 #app-card--savethedate {
-  z-index: 200;
+  z-index: 100;
   height: ($cardWidth * 6 / 4);
   background-image: url(/img/postcard.png);
   opacity: .7;
@@ -164,6 +164,7 @@ $cardWidth: 400px;
 $mailboxCardHeight:  $cardWidth * 2 / 3;
 
 #app-card--mailbox {
+  z-index: 200;
   height: $mailboxCardHeight;
   top: 50%;
   margin-top: -$mailboxCardHeight / 2;
@@ -179,6 +180,7 @@ $stringLength: 50vh;
 .app-string {
   display: none;
   position: fixed;
+  z-index: 300;
   margin-top: -$iconWidth - $iconShadowHeight;
   padding-top: $stringLength;
   width: $iconWidth;
