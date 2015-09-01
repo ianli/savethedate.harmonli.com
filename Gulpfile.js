@@ -16,7 +16,7 @@ var watchify = require('watchify');
 var jsPaths = {
   MINIFIED_OUT: 'main.min.js',
   OUT: 'main.js',
-  DEST_BUILD: 'js',
+  DEST_BUILD: 'js/build',
   ENTRY_POINT: './_js/main.js'
 };
 
