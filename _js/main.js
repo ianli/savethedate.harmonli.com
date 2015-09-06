@@ -1,6 +1,7 @@
 'use strict';
 
 var ArrowIcon = require('./ArrowIcon');
+var Dolphin = require('./Dolphin');
 var EndIcon = require('./EndIcon');
 var HandIcon = require('./HandIcon');
 var SaveTheDateCard = require('./SaveTheDateCard');
@@ -101,7 +102,12 @@ function initialize() {
   $(document.body).scrollTop(0);
 
   ArrowIcon.init();
+  Dolphin.init();
   EndIcon.init();
   HandIcon.init();
   SaveTheDateCard.init();
+
+  $('#app-icon--end').on('click', function() {
+    Dolphin.toggle();
+  });
 }
