@@ -7,6 +7,11 @@ body {
 // Background
 //
 
+html {
+  background: url(/img/bg-sanfrancisco.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
 .app-bg {
   position: fixed;
   z-index: 0;
