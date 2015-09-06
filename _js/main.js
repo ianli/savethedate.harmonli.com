@@ -66,10 +66,15 @@ $(document).ready(function() {
       })
       .addTo(ScrollDispatcher);
 
-  if ($(document).width() <= 768) {
-    return;
+  if ($(document).width() > 768) {
+    setupForDesktopScreen();
   }
+});
 
+/**
+ * Setup for desktop screens.
+ */
+function setupForDesktopScreen() {
   // Coaster animation
   new SimpleScrollScene({
         onScroll: function(scrollInfo) {
@@ -106,4 +111,4 @@ $(document).ready(function() {
         }
       })
       .addTo(ScrollDispatcher);
-});
+}

@@ -554,10 +554,15 @@ $(document).ready(function() {
       })
       .addTo(ScrollDispatcher);
 
-  if ($(document).width() <= 768) {
-    return;
+  if ($(document).width() > 768) {
+    setupForDesktopScreen();
   }
+});
 
+/**
+ * Setup for desktop screens.
+ */
+function setupForDesktopScreen() {
   // Coaster animation
   new SimpleScrollScene({
         onScroll: function(scrollInfo) {
@@ -594,7 +599,7 @@ $(document).ready(function() {
         }
       })
       .addTo(ScrollDispatcher);
-});
+}
 
 },{"./ArrowIcon":"/Users/ianli/WorkspacePersonal/harmonli.com/_js/ArrowIcon.js","./Dolphin":"/Users/ianli/WorkspacePersonal/harmonli.com/_js/Dolphin.js","./EndIcon":"/Users/ianli/WorkspacePersonal/harmonli.com/_js/EndIcon.js","./HandIcon":"/Users/ianli/WorkspacePersonal/harmonli.com/_js/HandIcon.js","./SaveTheDateCard":"/Users/ianli/WorkspacePersonal/harmonli.com/_js/SaveTheDateCard.js","./ScrollDispatcher":"/Users/ianli/WorkspacePersonal/harmonli.com/_js/ScrollDispatcher.js","./ScrollScene":"/Users/ianli/WorkspacePersonal/harmonli.com/_js/ScrollScene.js","./SimpleScrollScene":"/Users/ianli/WorkspacePersonal/harmonli.com/_js/SimpleScrollScene.js","lodash.delay":"/Users/ianli/WorkspacePersonal/harmonli.com/node_modules/lodash.delay/index.js"}],"/Users/ianli/WorkspacePersonal/harmonli.com/node_modules/lodash.delay/index.js":[function(require,module,exports){
 /**
