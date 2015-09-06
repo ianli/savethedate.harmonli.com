@@ -9,6 +9,7 @@ body {
 
 .app-bg {
   position: fixed;
+  z-index: 0;
   top: 0;
   bottom: 0;
   right: 0;
@@ -21,6 +22,7 @@ body {
 
 .app-bg-obfuscator {
   position: fixed;
+  z-index: 0;
   top: 0;
   bottom: 0;
   right: 0;
