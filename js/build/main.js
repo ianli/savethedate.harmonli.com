@@ -291,7 +291,8 @@ var ScrollDispatcher = function() {
 
   if (scroll) {
     // requestAnimationFrame exists, so call it for the first time.
-    scroll(loop);
+    // scroll(loop);
+    scroll(_.throttle(loop, 100));
   } else {
     // requestAnimationFrame doesn't exist,
     // so fallback to scroll events.
@@ -316,7 +317,8 @@ var ScrollDispatcher = function() {
     }
 
     // Recall the loop.
-    scroll(loop);
+    // scroll(loop);
+    scroll(_.throttle(loop, 100));
   }
 
   /**
