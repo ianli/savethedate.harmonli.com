@@ -12,7 +12,6 @@ var SimpleScrollScene = require('./SimpleScrollScene');
 // Import Lodash.js functions individually.
 var _ = {};
 _.delay = require('lodash.delay');
-_.throttle = require('lodash.throttle');
 
 var OBFUSCATOR_OPACITY = 0.7;
 

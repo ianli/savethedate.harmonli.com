@@ -500,7 +500,6 @@ var SimpleScrollScene = require('./SimpleScrollScene');
 // Import Lodash.js functions individually.
 var _ = {};
 _.delay = require('lodash.delay');
-_.throttle = require('lodash.throttle');
 
 var OBFUSCATOR_OPACITY = 0.7;
 
@@ -597,7 +596,7 @@ $(document).ready(function() {
       .addTo(ScrollDispatcher);
 });
 
-},{"./ArrowIcon":"/Users/ianli/WorkspacePersonal/harmonli.com/_js/ArrowIcon.js","./Dolphin":"/Users/ianli/WorkspacePersonal/harmonli.com/_js/Dolphin.js","./EndIcon":"/Users/ianli/WorkspacePersonal/harmonli.com/_js/EndIcon.js","./HandIcon":"/Users/ianli/WorkspacePersonal/harmonli.com/_js/HandIcon.js","./SaveTheDateCard":"/Users/ianli/WorkspacePersonal/harmonli.com/_js/SaveTheDateCard.js","./ScrollDispatcher":"/Users/ianli/WorkspacePersonal/harmonli.com/_js/ScrollDispatcher.js","./ScrollScene":"/Users/ianli/WorkspacePersonal/harmonli.com/_js/ScrollScene.js","./SimpleScrollScene":"/Users/ianli/WorkspacePersonal/harmonli.com/_js/SimpleScrollScene.js","lodash.delay":"/Users/ianli/WorkspacePersonal/harmonli.com/node_modules/lodash.delay/index.js","lodash.throttle":"/Users/ianli/WorkspacePersonal/harmonli.com/node_modules/lodash.throttle/index.js"}],"/Users/ianli/WorkspacePersonal/harmonli.com/node_modules/lodash.delay/index.js":[function(require,module,exports){
+},{"./ArrowIcon":"/Users/ianli/WorkspacePersonal/harmonli.com/_js/ArrowIcon.js","./Dolphin":"/Users/ianli/WorkspacePersonal/harmonli.com/_js/Dolphin.js","./EndIcon":"/Users/ianli/WorkspacePersonal/harmonli.com/_js/EndIcon.js","./HandIcon":"/Users/ianli/WorkspacePersonal/harmonli.com/_js/HandIcon.js","./SaveTheDateCard":"/Users/ianli/WorkspacePersonal/harmonli.com/_js/SaveTheDateCard.js","./ScrollDispatcher":"/Users/ianli/WorkspacePersonal/harmonli.com/_js/ScrollDispatcher.js","./ScrollScene":"/Users/ianli/WorkspacePersonal/harmonli.com/_js/ScrollScene.js","./SimpleScrollScene":"/Users/ianli/WorkspacePersonal/harmonli.com/_js/SimpleScrollScene.js","lodash.delay":"/Users/ianli/WorkspacePersonal/harmonli.com/node_modules/lodash.delay/index.js"}],"/Users/ianli/WorkspacePersonal/harmonli.com/node_modules/lodash.delay/index.js":[function(require,module,exports){
 /**
  * lodash 3.1.0 (Custom Build) <https://lodash.com/>
  * Build: `lodash modern modularize exports="npm" -o ./`
