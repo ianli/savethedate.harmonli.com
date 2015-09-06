@@ -8,10 +8,7 @@ body {
 //
 
 html {
-  background-attachment: fixed;
-  background-image: url(/img/bg-sanfrancisco.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url(/img/bg-sanfrancisco.jpg) no-repeat center center fixed;
   background-size: cover;
 }
 
