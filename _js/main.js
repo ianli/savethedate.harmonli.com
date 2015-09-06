@@ -3,7 +3,6 @@
 var ArrowIcon = require('./ArrowIcon');
 var EndIcon = require('./EndIcon');
 var HandIcon = require('./HandIcon');
-var HangingIcons = require('./HangingIcons');
 var SaveTheDateCard = require('./SaveTheDateCard');
 var ScrollDispatcher = require('./ScrollDispatcher');
 var ScrollScene = require('./ScrollScene');
@@ -48,12 +47,31 @@ $(document).ready(function() {
         downCallback: function() {
           EndIcon.show();
           ArrowIcon.hide();
-          HangingIcons.show();
         },
         upCallback: function() {
           EndIcon.hide();
           ArrowIcon.show();
-          HangingIcons.hide();
+        }
+      })
+      .addTo(ScrollDispatcher);
+
+
+  new SimpleScrollScene({
+        onScroll: function(scrollInfo) {
+          var windowHeight = scrollInfo.windowHeight;
+          var scrollHeight = scrollInfo.scrollHeight;
+          var scrollTop = scrollInfo.scrollTop;
+          var $section = $('#app-section-3');
+          var sectionTop = $section.offset().top;
+          var sectionHeight = $section.height();
+
+          var ratio = ((scrollTop + windowHeight) - sectionTop) / sectionHeight;
+
+          if (ratio >= 0) {
+            $('#app-card--coaster').css({
+              transform: 'scale(' + ratio + ') rotate(' + (ratio * 360) + 'deg)'
+            });
+          }
         }
       })
       .addTo(ScrollDispatcher);
@@ -85,6 +103,5 @@ function initialize() {
   ArrowIcon.init();
   EndIcon.init();
   HandIcon.init();
-  HangingIcons.init();
   SaveTheDateCard.init();
 }
