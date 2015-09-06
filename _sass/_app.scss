@@ -1,7 +1,7 @@
 body {
   position: relative;
   width: 100%;
-  background-color: $clr-light-blue-900;
+  background-color: #fff;
 }
 
 //////////////////////////////
@@ -219,6 +219,10 @@ $coasterCardHeight: $cardWidth;
 
 @media only screen
        and (max-width: 480px) {
+
+  body {
+    background-color: $clr-light-blue-900;
+  }
 
   .app-bg,
   .app-bg-obfuscator {
