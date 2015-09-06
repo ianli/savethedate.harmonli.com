@@ -214,11 +214,13 @@ $coasterCardHeight: $cardWidth;
 }
 
 //////////////////////////////
-// Media Query: Mobile
+// Media Query
 //
 
+// Extra small devices (phones, less than 768px).
+// http://getbootstrap.com/css/#grid-media-queries
 @media only screen
-       and (max-width: 480px) {
+       and (max-width: 768px) {
 
   body {
     background-color: $clr-light-blue-900;
