@@ -17,7 +17,18 @@ _.throttle = require('lodash.throttle');
 var OBFUSCATOR_OPACITY = 0.7;
 
 $(document).ready(function() {
-  initialize();
+  // Make sure that we're scrolled to the top.
+  $(document.body).scrollTop(0);
+
+  ArrowIcon.init();
+  Dolphin.init();
+  EndIcon.init();
+  HandIcon.init();
+  SaveTheDateCard.init();
+
+  $('#app-icon--end').on('click', function() {
+    Dolphin.toggle();
+  });
 
   _.delay(function() {
     $('.app-bg-obfuscator')
@@ -56,7 +67,11 @@ $(document).ready(function() {
       })
       .addTo(ScrollDispatcher);
 
+  if ($(document).width() <= 768) {
+    return;
+  }
 
+  // Coaster animation
   new SimpleScrollScene({
         onScroll: function(scrollInfo) {
           var windowHeight = scrollInfo.windowHeight;
@@ -93,21 +108,3 @@ $(document).ready(function() {
       })
       .addTo(ScrollDispatcher);
 });
-
-/**
- * Sets the initial states of elements.
- */
-function initialize() {
-  // Make sure that we're scrolled to the top.
-  $(document.body).scrollTop(0);
-
-  ArrowIcon.init();
-  Dolphin.init();
-  EndIcon.init();
-  HandIcon.init();
-  SaveTheDateCard.init();
-
-  $('#app-icon--end').on('click', function() {
-    Dolphin.toggle();
-  });
-}

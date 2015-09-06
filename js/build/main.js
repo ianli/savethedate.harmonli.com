@@ -505,7 +505,18 @@ _.throttle = require('lodash.throttle');
 var OBFUSCATOR_OPACITY = 0.7;
 
 $(document).ready(function() {
-  initialize();
+  // Make sure that we're scrolled to the top.
+  $(document.body).scrollTop(0);
+
+  ArrowIcon.init();
+  Dolphin.init();
+  EndIcon.init();
+  HandIcon.init();
+  SaveTheDateCard.init();
+
+  $('#app-icon--end').on('click', function() {
+    Dolphin.toggle();
+  });
 
   _.delay(function() {
     $('.app-bg-obfuscator')
@@ -544,7 +555,11 @@ $(document).ready(function() {
       })
       .addTo(ScrollDispatcher);
 
+  if ($(document).width() <= 768) {
+    return;
+  }
 
+  // Coaster animation
   new SimpleScrollScene({
         onScroll: function(scrollInfo) {
           var windowHeight = scrollInfo.windowHeight;
@@ -581,24 +596,6 @@ $(document).ready(function() {
       })
       .addTo(ScrollDispatcher);
 });
-
-/**
- * Sets the initial states of elements.
- */
-function initialize() {
-  // Make sure that we're scrolled to the top.
-  $(document.body).scrollTop(0);
-
-  ArrowIcon.init();
-  Dolphin.init();
-  EndIcon.init();
-  HandIcon.init();
-  SaveTheDateCard.init();
-
-  $('#app-icon--end').on('click', function() {
-    Dolphin.toggle();
-  });
-}
 
 },{"./ArrowIcon":"/Users/ianli/WorkspacePersonal/harmonli.com/_js/ArrowIcon.js","./Dolphin":"/Users/ianli/WorkspacePersonal/harmonli.com/_js/Dolphin.js","./EndIcon":"/Users/ianli/WorkspacePersonal/harmonli.com/_js/EndIcon.js","./HandIcon":"/Users/ianli/WorkspacePersonal/harmonli.com/_js/HandIcon.js","./SaveTheDateCard":"/Users/ianli/WorkspacePersonal/harmonli.com/_js/SaveTheDateCard.js","./ScrollDispatcher":"/Users/ianli/WorkspacePersonal/harmonli.com/_js/ScrollDispatcher.js","./ScrollScene":"/Users/ianli/WorkspacePersonal/harmonli.com/_js/ScrollScene.js","./SimpleScrollScene":"/Users/ianli/WorkspacePersonal/harmonli.com/_js/SimpleScrollScene.js","lodash.delay":"/Users/ianli/WorkspacePersonal/harmonli.com/node_modules/lodash.delay/index.js","lodash.throttle":"/Users/ianli/WorkspacePersonal/harmonli.com/node_modules/lodash.throttle/index.js"}],"/Users/ianli/WorkspacePersonal/harmonli.com/node_modules/lodash.delay/index.js":[function(require,module,exports){
 /**
