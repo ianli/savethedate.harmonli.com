@@ -72,7 +72,7 @@ $iconShadowHeight: 32px;
 #app-icon--arrow {
   display: none;
   position: fixed;
-  z-index: 401;
+  z-index: 402;
   background-image: url('/img/icon-down.png');
 }
 
@@ -120,9 +120,11 @@ $iconShadowHeight: 32px;
 
 #app-icon--end {
   position: absolute;
+  z-index: 401;
   bottom: 24px;
   opacity: 0;
   background-image: url('/img/icon-end.png');
+  cursor: pointer;
 }
 
 //////////////////////////////
@@ -227,4 +229,18 @@ $stringLength: 50vh;
 #app-string--happy {
   left: 50%;
   margin-left: -$iconWidth / 2 + ($iconWidth * 3);
+}
+
+//////////////////////////////
+// Dolphin
+//
+
+#app-dolphin {
+  position: fixed;
+  z-index: 400;
+  left: 50%;
+  bottom: -160px;
+  margin-left: -75px;
+  width: 150px;
+  height: 320px;
 }
