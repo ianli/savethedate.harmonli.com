@@ -239,8 +239,8 @@ function show() {
   var offset = ($(window).height() - $postcard.height()) / 2;
 
   // Offset is never smaller than the minimum offset.
-  if (offset < 100) {
-    offset = 100;
+  if (offset < 20) {
+    offset = 20;
   }
 
   $postcard
