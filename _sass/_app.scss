@@ -244,3 +244,33 @@ $stringLength: 50vh;
   width: 150px;
   height: 320px;
 }
+
+//////////////////////////////
+// Media Query: Mobile
+//
+
+@media only screen
+       and (max-width: 480px) {
+
+  $mobileCardWidth: 300px;
+
+  .app-card {
+    margin-left: -$mobileCardWidth / 2;
+    width: $mobileCardWidth;
+  }
+
+  #app-card--savethedate {
+    height: ($mobileCardWidth * 6 / 4);
+  }
+
+  #app-card--mailbox {
+    height: ($mobileCardWidth * 2 / 3);
+    margin-top: -($mobileCardWidth * 2 / 3) / 2;
+  }
+
+  #app-card--coaster {
+    height: $mobileCardWidth;
+    margin-top: -$mobileCardWidth / 2;
+  }
+
+}
