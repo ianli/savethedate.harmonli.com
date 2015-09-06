@@ -218,7 +218,8 @@ $coasterCardHeight: $cardWidth;
 @media only screen
        and (max-width: 480px) {
 
-  .app-bg {
+  .app-bg,
+  .app-bg-obfuscator {
     display: none;
   }
 
