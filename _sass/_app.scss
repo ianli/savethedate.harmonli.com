@@ -161,7 +161,7 @@ $cardWidth: 400px;
 // Mailbox Card
 //
 
-$mailboxCardHeight:  $cardWidth * 2 / 3;
+$mailboxCardHeight: $cardWidth * 2 / 3;
 
 #app-card--mailbox {
   z-index: 200;
@@ -169,6 +169,29 @@ $mailboxCardHeight:  $cardWidth * 2 / 3;
   top: 50%;
   margin-top: -$mailboxCardHeight / 2;
   background-image: url(/img/mailbox.png);
+}
+
+//////////////////////////////
+// Coaster Card
+//
+
+$coasterCardHeight: $cardWidth;
+
+#app-card--coaster {
+  z-index: 300;
+  height: $coasterCardHeight;
+  top: 50%;
+  margin-top: -$coasterCardHeight / 2;
+  background-image: url(/img/card-coaster.png);
+}
+
+//////////////////////////////
+// Hotspot
+//
+
+.app-hotspot {
+  display: block;
+  position: absolute;
 }
 
 //////////////////////////////
