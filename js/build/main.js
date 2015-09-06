@@ -503,6 +503,14 @@ _.delay = require('lodash.delay');
 
 var OBFUSCATOR_OPACITY = 0.7;
 
+// Force the location hash to be 'savethedate', so the URL is
+// http://www.harmonli.com/#savethedate
+// In the case that we move this page, we can check the hash information
+// to know if we need to redirect to the new URL of this page.
+if (location.hash != 'savethedate') {
+  location.hash = 'savethedate';
+}
+
 $(document).ready(function() {
   // Make sure that we're scrolled to the top.
   $(document.body).scrollTop(0);
