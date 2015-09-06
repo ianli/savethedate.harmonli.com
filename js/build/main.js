@@ -257,7 +257,7 @@ function show() {
 }
 
 function hide() {
-
+  // Do not hide.
 }
 
 module.exports = SaveTheDateCard;
