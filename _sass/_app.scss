@@ -197,41 +197,6 @@ $coasterCardHeight: $cardWidth;
 }
 
 //////////////////////////////
-// String
-//
-
-$stringLength: 50vh;
-
-.app-string {
-  display: none;
-  position: fixed;
-  z-index: 300;
-  margin-top: -$iconWidth - $iconShadowHeight;
-  padding-top: $stringLength;
-  width: $iconWidth;
-  background-image: url(/img/bg-string.png);
-  background-position: center center;
-  background-repeat: repeat-y;
-  background-size: 2px;
-  transition: top 200ms;
-}
-
-#app-string--sf {
-  left: 50%;
-  margin-left: -$iconWidth / 2 - ($iconWidth * 3);
-}
-
-#app-string--heart {
-  left: 50%;
-  margin-left: -$iconWidth / 2;
-}
-
-#app-string--happy {
-  left: 50%;
-  margin-left: -$iconWidth / 2 + ($iconWidth * 3);
-}
-
-//////////////////////////////
 // Dolphin
 //
 
