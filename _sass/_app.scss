@@ -218,6 +218,10 @@ $coasterCardHeight: $cardWidth;
 @media only screen
        and (max-width: 480px) {
 
+  .app-bg {
+    display: none;
+  }
+
   $mobileCardWidth: 300px;
 
   .app-card {
