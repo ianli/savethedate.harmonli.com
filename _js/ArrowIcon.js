@@ -14,6 +14,30 @@ function init() {
       bottom: -($appIconArrow.height() + 10)
     })
     .show();
+
+  $appIconArrow.on('click', function() {
+    var currScrollTop = $(document.body).scrollTop();
+    var windowHeight = $(window).height();
+    var arrowPositionY = currScrollTop + windowHeight - 100;
+    var $section2 = $('#app-section-2');
+    var $section3 = $('#app-section-3');
+
+    if (arrowPositionY < $section2.offset().top) {
+      $section2
+        .velocity('scroll', {
+          duration: 1000,
+          offset: 10,
+          easing: 'ease-in-out'
+        });
+    } else if (arrowPositionY < $section3.offset().top) {
+      $section3
+        .velocity('scroll', {
+          duration: 1000,
+          offset: 10,
+          easing: 'ease-in-out'
+        });
+    }
+  });
 }
 
 function show() {
