@@ -26,14 +26,14 @@ function init() {
       $section2
         .velocity('scroll', {
           duration: 1000,
-          offset: 10,
+          offset: 50,
           easing: 'ease-in-out'
         });
     } else if (arrowPositionY < $section3.offset().top) {
       $section3
         .velocity('scroll', {
           duration: 1000,
-          offset: 10,
+          offset: 50,
           easing: 'ease-in-out'
         });
     }
