@@ -231,7 +231,7 @@ $coasterCardHeight: $cardWidth;
 
   .app-bg,
   .app-bg-obfuscator {
-    opacity: 0;
+    display: none;
   }
 
   $mobileCardWidth: 300px;
