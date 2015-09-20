@@ -42,6 +42,10 @@ ScrollScene.prototype.trigger = function(scrollInfo) {
   // The trigger point depends on the location of the element,
   // the elements location in the viewport (onEnter, onCenter, onLeave),
   // and the trigger offset.
+  //
+  // onEnter is scroll offset - window height
+  // onCenter is scroll offset - half of window height
+  // onLeave is scroll offset
   var triggerPoint;
   switch (this.triggerHook) {
     case 'onEnter':
