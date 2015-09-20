@@ -30,7 +30,6 @@ $(document).ready(function() {
   ArrowIcon.init();
   Dolphin.init();
   EndIcon.init();
-  HandIcon.init();
   SaveTheDateCard.init();
 
   $('#app-icon--end').on('click', function() {
@@ -49,15 +48,6 @@ $(document).ready(function() {
   }, 500);
 
   _.delay(ArrowIcon.show, 1000);
-
-  // Mailbox scene
-  new ScrollScene({
-        triggerElement: '#app-card--mailbox',
-        triggerOffset: -200,
-        downCallback: HandIcon.show,
-        upCallback: HandIcon.hide
-      })
-      .addTo(ScrollDispatcher);
 
   // End icon scene
   new ScrollScene({
@@ -83,6 +73,17 @@ $(document).ready(function() {
  * Setup for desktop screens.
  */
 function setupForDesktopScreen() {
+  HandIcon.init();
+  
+  // Mailbox scene
+  new ScrollScene({
+        triggerElement: '#app-card--mailbox',
+        triggerOffset: -200,
+        downCallback: HandIcon.show,
+        upCallback: HandIcon.hide
+      })
+      .addTo(ScrollDispatcher);
+
   // Coaster animation
   new SimpleScrollScene({
         onScroll: function(scrollInfo) {
