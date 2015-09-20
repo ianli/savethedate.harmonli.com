@@ -257,6 +257,23 @@ $coasterCardHeight: $cardWidth;
 
   .app-section {
     min-height: 400px;
+    background-size: cover;
+    background-position: center center;
+    background-image: url(/img/bg-sanfrancisco.jpg);
+  }
+
+  #app-section-1 {
+    background: linear-gradient(to left, rgba(0,0,0,.5), rgba(0,0,0,.5)),
+        url(/img/bg-sanfrancisco.jpg);
+    background-size: cover, cover;
+    background-position: center center, center center;
+  }
+
+  #app-section-2 {
+    background: linear-gradient(to left, rgba(0,0,0,.25), rgba(0,0,0,.25)),
+        url(/img/bg-sanfrancisco.jpg);
+    background-size: cover, cover;
+    background-position: center center, center center;
   }
 
 }
