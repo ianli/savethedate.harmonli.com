@@ -231,7 +231,7 @@ $coasterCardHeight: $cardWidth;
 
   .app-bg,
   .app-bg-obfuscator {
-    display: none;
+    opacity: 0;
   }
 
   $mobileCardWidth: 300px;
@@ -263,14 +263,14 @@ $coasterCardHeight: $cardWidth;
   }
 
   #app-section-1 {
-    background: linear-gradient(to left, rgba(0,0,0,.5), rgba(0,0,0,.5)),
+    background: linear-gradient(to left, rgba(0,0,0,.7), rgba(0,0,0,.7)),
         url(/img/bg-sanfrancisco.jpg);
     background-size: cover, cover;
     background-position: center center, center center;
   }
 
   #app-section-2 {
-    background: linear-gradient(to left, rgba(0,0,0,.25), rgba(0,0,0,.25)),
+    background: linear-gradient(to left, rgba(0,0,0,.35), rgba(0,0,0,.35)),
         url(/img/bg-sanfrancisco.jpg);
     background-size: cover, cover;
     background-position: center center, center center;

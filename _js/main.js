@@ -53,7 +53,7 @@ $(document).ready(function() {
   // Mailbox scene
   new ScrollScene({
         triggerElement: '#app-card--mailbox',
-        triggerOffset: 135,
+        triggerOffset: -50,
         downCallback: HandIcon.show,
         upCallback: HandIcon.hide
       })

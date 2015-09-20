@@ -27,14 +27,14 @@ function init() {
       $section2
         .velocity('scroll', {
           duration: 1000,
-          offset: 50,
+          offset: 0,
           easing: 'ease-in-out'
         });
     } else if (arrowPositionY < $section3.offset().top) {
       $section3
         .velocity('scroll', {
           duration: 1000,
-          offset: 50,
+          offset: 0,
           easing: 'ease-in-out'
         });
     }
@@ -565,7 +565,7 @@ $(document).ready(function() {
   // Mailbox scene
   new ScrollScene({
         triggerElement: '#app-card--mailbox',
-        triggerOffset: 135,
+        triggerOffset: -50,
         downCallback: HandIcon.show,
         upCallback: HandIcon.hide
       })
