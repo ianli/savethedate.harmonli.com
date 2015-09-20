@@ -350,7 +350,7 @@ var ScrollDispatcher = function() {
     var currScrollTop = window.pageYOffset;
 
     var scrollInfo = {
-          windowHeight: $(window).height(),
+          windowHeight: window.innerHeight ? window.innerHeight : $(window).height(),
           scrollHeight: $(document.body).prop('scrollHeight'),
           scrollTop: currScrollTop,
           direction: (currScrollTop > lastScrollTop) ? 'down' : 'up'
