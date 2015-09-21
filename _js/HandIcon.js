@@ -9,7 +9,7 @@ var HandIcon = {
 function init() {
   $('#app-icon--hand')
       .css({
-        bottom: -500
+        scale: 1
       });
 }
 
@@ -18,27 +18,19 @@ function show() {
       .velocity('stop', true)
       .velocity(
         {
-          bottom: -40
+          scale: 1.2
         },
         {
           duration: 1000,
-          easing: [150, 15]
+          easing: 'ease-out',
+          loop: true
         }
       );
 }
 
 function hide() {
   $('#app-icon--hand')
-      .velocity('stop', true)
-      .velocity(
-        {
-          bottom: -500
-        },
-        {
-          duration: 1000,
-          easing: [150, 15]
-        }
-      );
+      .velocity('stop', true);
 }
 
 module.exports = HandIcon;

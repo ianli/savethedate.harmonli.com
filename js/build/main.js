@@ -206,7 +206,7 @@ var HandIcon = {
 function init() {
   $('#app-icon--hand')
       .css({
-        bottom: -500
+        scale: 1
       });
 }
 
@@ -215,27 +215,19 @@ function show() {
       .velocity('stop', true)
       .velocity(
         {
-          bottom: -40
+          scale: 1.2
         },
         {
           duration: 1000,
-          easing: [150, 15]
+          easing: 'ease-out',
+          loop: true
         }
       );
 }
 
 function hide() {
   $('#app-icon--hand')
-      .velocity('stop', true)
-      .velocity(
-        {
-          bottom: -500
-        },
-        {
-          duration: 1000,
-          easing: [150, 15]
-        }
-      );
+      .velocity('stop', true);
 }
 
 module.exports = HandIcon;
@@ -545,14 +537,14 @@ $(document).ready(function() {
   // Make sure that we're scrolled to the top.
   $(document.body).scrollTop(0);
 
-  ArrowIcon.init();
-  Dolphin.init();
-  EndIcon.init();
-  SaveTheDateCard.init();
+  //
+  // Scene 1
+  // - Arrow icon
+  // - Save the date card
+  //
 
-  $('#app-icon--end').on('click', function() {
-    Dolphin.toggle();
-  });
+  ArrowIcon.init();
+  SaveTheDateCard.init();
 
   _.delay(function() {
     $('.app-bg-obfuscator')
@@ -567,7 +559,28 @@ $(document).ready(function() {
 
   _.delay(ArrowIcon.show, 1000);
 
-  // End icon scene
+  //
+  // Scene 2
+  // - 
+
+  HandIcon.init();
+  HandIcon.show();
+
+  //
+  // Scene 3
+  // - Dolphin
+  // - End icon
+  //
+
+  Dolphin.init();
+  EndIcon.init();
+
+  // Dolphin
+  $('#app-icon--end').on('click', function() {
+    Dolphin.toggle();
+  });
+
+  // End icon
   new ScrollScene({
         triggerElement: '#app-icon--end',
         triggerHook: 'onEnter',
@@ -591,17 +604,6 @@ $(document).ready(function() {
  * Setup for desktop screens.
  */
 function setupForDesktopScreen() {
-  HandIcon.init();
-  
-  // Mailbox scene
-  new ScrollScene({
-        triggerElement: '#app-card--mailbox',
-        triggerOffset: -200,
-        downCallback: HandIcon.show,
-        upCallback: HandIcon.hide
-      })
-      .addTo(ScrollDispatcher);
-
   // Coaster animation
   new SimpleScrollScene({
         onScroll: function(scrollInfo) {
