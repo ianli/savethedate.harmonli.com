@@ -1,8 +1,7 @@
-Beth and Ian's Wedding Site
-===========================
+Beth and Ian's Save the Date website
+====================================
 
-This is the wedding site for Beth Harmon and Ian Li. It will be hosted at
-http://harmonli.com
+This is the Save the Date website for Beth Harmon and Ian Li hosted at http://savethedate.harmonli.com
 
 
 Development
